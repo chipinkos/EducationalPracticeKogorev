@@ -1,0 +1,51 @@
+﻿<Page x:Class="EducationalPracticeKogorev.Pages.EditExam"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EducationalPracticeKogorev.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1440"
+      Title="EditExam">
+
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="2" Width="450" Height="550">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel x:Name="IdPanel" Orientation="Vertical">
+                    <TextBlock HorizontalAlignment="Left">ID</TextBlock>
+                    <TextBox x:Name ="IdBox" Text="{Binding Path= Id_exam}" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock HorizontalAlignment="Left">Дисциплина</TextBlock>
+                    <ComboBox x:Name ="DisciplineComboBox" Text="{Binding Path= Discipline.DName}" HorizontalAlignment="Left" IsEditable="True"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock>Преподаватель</TextBlock>
+                    <ComboBox x:Name ="LecturerComboBox" Text="{Binding Path= Employee.Surname}" HorizontalAlignment="Left" IsEditable="True"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>Дата</TextBlock>
+                        <DatePicker x:Name ="ExamDatePicker" Text="{Binding EDate}" HorizontalAlignment="Left"></DatePicker>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>Аудитория</TextBlock>
+                        <ComboBox x:Name ="AuditoryComboBox" Text="{Binding Path = ExamAuditory.AName}" HorizontalAlignment="Left" IsEditable="True"></ComboBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>Студент</TextBlock>
+                        <ComboBox x:Name ="StudentComboBox" HorizontalAlignment="Left" IsEditable="True" Text="{Binding Path = Student.Surname}"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>Оценка</TextBlock>
+                        <TextBox x:Name ="PointsText" Text="{Binding Points}" HorizontalAlignment="Left" Width="50" PreviewTextInput="PointsText_PreviewTextInput"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <Button x:Name="SaveButton" HorizontalAlignment="Center" Width="200" Margin="0,50,0,0" Click="SaveButton_Click">Сохранить</Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

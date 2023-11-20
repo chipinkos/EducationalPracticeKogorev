@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EducationalPracticeKogorev.NavHost;
+using EducationalPracticeKogorev.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,21 @@ namespace EducationalPracticeKogorev
         public MainWindow()
         {
             InitializeComponent();
+            App.mainWindow = this;
+            AppNav.Navigate(new PageComps("Авторизация", new Authorization()));
+            WindowState = WindowState.Maximized;
         }
+
+        private void PopButton_Click(object sender, RoutedEventArgs e)
+        {
+            AppNav.NavigateAndPop();
+        }
+
+        private void QuitAsAdminButton_Click(object sender, RoutedEventArgs e)
+        {
+            AppNav.DropHistory();
+            AppNav.Navigate(new PageComps("Авторизация", new Authorization()));
+        }
+
     }
 }

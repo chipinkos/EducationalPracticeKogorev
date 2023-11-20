@@ -1,0 +1,60 @@
+﻿<Page x:Class="EducationalPracticeKogorev.Pages.EditEmployee"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EducationalPracticeKogorev.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1440"
+      Title="EditEmployee">
+
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="2" Width="550" Height="550">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical" Margin="0,0,50,0">
+                        <StackPanel x:Name="IdPanel" Orientation="Vertical" HorizontalAlignment="Left">
+                            <TextBlock HorizontalAlignment="Left">ID</TextBlock>
+                            <TextBox x:Name ="IdBox" Text="{Binding Path= Id_emp}" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>Сотрудник</TextBlock>
+                            <TextBox x:Name ="EmployeeBox" HorizontalAlignment="Left" Text="{Binding Path = Surname}"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                            <TextBlock HorizontalAlignment="Left">Кафедра</TextBlock>
+                            <ComboBox x:Name ="DepartmentComboBox" Text="{Binding Path= Department.DName}" HorizontalAlignment="Left" IsEditable="True"></ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>Должность</TextBlock>
+                            <ComboBox x:Name ="TitleBox" HorizontalAlignment="Left" Text="{Binding Path = Title.TName}" IsEditable="True"></ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>Звание</TextBlock>
+                            <ComboBox x:Name ="TitleRankBox" HorizontalAlignment="Left" Text="{Binding Path = Title.TitleRank.TRRank}" IsEditable="True"></ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>Начальник</TextBlock>
+                            <ComboBox x:Name ="ChefBox" HorizontalAlignment="Left" IsEditable="True" SelectionChanged="ChefBox_SelectionChanged"></ComboBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock>Назначить начальником</TextBlock>
+                            <CheckBox x:Name="SetChefChecker" Margin="5,0,0,0" IsChecked="False" Checked="SetChefChecker_Checked"></CheckBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>Стаж</TextBlock>
+                            <TextBox x:Name ="ExpBox" HorizontalAlignment="Left" Text="{Binding Path = Exp}" PreviewTextInput="ExpBox_PreviewTextInput"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>Зарплата</TextBlock>
+                            <TextBox x:Name ="SalaryBox" HorizontalAlignment="Left" Text="{Binding Path = Salary}" PreviewTextInput="SalaryBox_PreviewTextInput"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <Button x:Name="SaveButton" HorizontalAlignment="Center" Width="200" Margin="0,50,0,0" Click="SaveButton_Click">Сохранить</Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

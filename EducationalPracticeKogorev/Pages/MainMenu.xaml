@@ -1,0 +1,19 @@
+﻿<Page x:Class="EducationalPracticeKogorev.Pages.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EducationalPracticeKogorev.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1440"
+      Title="MainMenu">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+            <Button x:Name="NavigateToExamsButton" Click="NavigateToExamsButton_Click">Учет экзаменов</Button>
+            <Button x:Name="NavigateToStudentsButton" Click="NavigateToStudentsButton_Click">Студенты</Button>
+            <Button x:Name="NavigateToEmployeesButton" Click="NavigateToEmployeesButton_Click">Сотрудники</Button>
+            <Button x:Name="NavigateToDisciplinesButton" Click="NavigateToDisciplinesButton_Click">Дисциплины</Button>
+        </StackPanel>
+    </Grid>
+</Page>
